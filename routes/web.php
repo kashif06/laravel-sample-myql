@@ -16,10 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', function() {
-    return view('home.index');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('products/category/{id}', function() {
     return view('product.by_category');

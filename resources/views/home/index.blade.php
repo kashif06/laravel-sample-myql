@@ -91,21 +91,13 @@
             </div>
         </div>
         <div class="row">
+            @foreach($categories as $category)
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="{{url('products/category/1')}}"><img src="{{asset('img/category_img_01.jpg')}}" class="rounded-circle img-fluid border green-hover"></a>
-                <h5 class="text-center mt-3 mb-3">Watches</h5>
-                <p class="text-center"><a href="{{url('products/category/1')}}" class="btn btn-success">Go Shop</a></p>
+                <a href="{{url('products/category/'.$category->id)}}"><img src="{{asset('img/'.$category->image)}}" class="rounded-circle img-fluid border green-hover"></a>
+                <h5 class="text-center mt-3 mb-3">{{$category->name}}</h5>
+                <p class="text-center"><a href="{{url('products/category/'.$category->id)}}" class="btn btn-success">Go Shop</a></p>
             </div>
-            <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="{{url('products/category/2')}}"><img src="{{asset('img/category_img_02.jpg')}}" class="rounded-circle img-fluid border green-hover"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Shoes</h2>
-                <p class="text-center"><a href="{{url('products/category/2')}}" class="btn btn-success">Go Shop</a></p>
-            </div>
-            <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="{{url('products/category/3')}}"><img src="{{asset('img/category_img_03.jpg')}}" class="rounded-circle img-fluid border green-hover"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Accessories</h2>
-                <p class="text-center"><a href="{{url('products/category/3')}}" class="btn btn-success">Go Shop</a></p>
-            </div>
+            @endforeach
         </div>
     </section>
     <!-- End Categories of The Month -->
